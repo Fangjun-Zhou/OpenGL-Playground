@@ -41,5 +41,21 @@ int main(int argc, char const *argv[]) {
     return EXIT_FAILURE;
   }
 
+  // Ensure we can capture the escape key being pressed below
+  glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
+
+  // Main loop.
+  do {
+    // Clear the screen.
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    // Draw nothing, see you in tutorial 2 !
+
+    // Swap buffers.
+    glfwSwapBuffers(window);
+    glfwPollEvents();
+  } while (glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS &&
+           glfwWindowShouldClose(window) == 0);
+
   return EXIT_SUCCESS;
 }
