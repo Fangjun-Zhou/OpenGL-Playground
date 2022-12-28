@@ -2,19 +2,27 @@ cmake_minimum_required(VERSION 3.25.1)
 
 project(GLFWOpenGL)
 
-add_executable(${PROJECT_NAME} src/main.cpp)
+# Include list.
+set(INCLUDES "")
+# Library list.
+set(LIBS "")
 
 # GLFW
 add_subdirectory(external/glfw)
-target_include_directories(${PROJECT_NAME} PUBLIC external/glfw/include)
-target_link_libraries(${PROJECT_NAME} glfw)
+list(APPEND INCLUDES external/glfw/include)
+list(APPEND LIBS glfw)
 
 # GLEW
 add_subdirectory(external/glew/build/cmake)
-target_include_directories(${PROJECT_NAME} PUBLIC external/glew/include)
-target_link_libraries(${PROJECT_NAME} glew_s)
+list(APPEND INCLUDES external/glew/include)
+list(APPEND LIBS glew_s)
 
 # GLM
 add_subdirectory(external/glm)
-target_include_directories(${PROJECT_NAME} PUBLIC external/glm)
-target_link_libraries(${PROJECT_NAME} glm)
+list(APPEND INCLUDES external/glm)
+list(APPEND LIBS glm)
+
+# Tutorial 1
+add_executable(tutorial-1 src/tutorial-1/main.cpp)
+target_include_directories(tutorial-1 PUBLIC ${INCLUDES})
+target_link_libraries(tutorial-1 ${LIBS})
