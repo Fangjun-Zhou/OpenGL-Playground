@@ -27,6 +27,11 @@ add_subdirectory(external/glm)
 list(APPEND INCLUDES external/glm)
 list(APPEND LIBS glm)
 
+# SPD Log
+add_subdirectory(external/spdlog)
+list(APPEND INCLUDES external/spdlog/include)
+list(APPEND LIBS spdlog)
+
 # ImGui
 # Add ImGui source code.
 set(IMGUI_SRC "")
@@ -63,16 +68,21 @@ list(APPEND INCLUDES src/common)
 list(APPEND LIBS common)
 
 # ImGui Example
-add_executable(imgui-example src/imgui-example/main.cpp)
-target_include_directories(imgui-example PUBLIC ${INCLUDES})
-target_link_libraries(imgui-example ${LIBS})
+add_executable(imgui_example src/imgui_example/main.cpp)
+target_include_directories(imgui_example PUBLIC ${INCLUDES})
+target_link_libraries(imgui_example ${LIBS})
+
+# ImGui Example 2
+add_executable(imgui_example_2 src/imgui_example_2/main.cpp)
+target_include_directories(imgui_example_2 PUBLIC ${INCLUDES})
+target_link_libraries(imgui_example_2 ${LIBS})
 
 # Tutorial 1
-add_executable(tutorial-1 src/tutorial-1/main.cpp)
-target_include_directories(tutorial-1 PUBLIC ${INCLUDES})
-target_link_libraries(tutorial-1 ${LIBS})
+add_executable(tutorial_1 src/tutorial_1/main.cpp)
+target_include_directories(tutorial_1 PUBLIC ${INCLUDES})
+target_link_libraries(tutorial_1 ${LIBS})
 
 # Tutorial 2
-add_executable(tutorial-2 src/tutorial-2/main.cpp src/common/loadShader.cpp)
-target_include_directories(tutorial-2 PUBLIC ${INCLUDES})
-target_link_libraries(tutorial-2 ${LIBS})
+add_executable(tutorial_2 src/tutorial_2/main.cpp src/common/loadShader.cpp)
+target_include_directories(tutorial_2 PUBLIC ${INCLUDES})
+target_link_libraries(tutorial_2 ${LIBS})
