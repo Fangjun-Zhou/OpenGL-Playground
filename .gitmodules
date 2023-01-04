@@ -11,3 +11,6 @@
 	path = external/imgui
 	url = git@github.com:Fangjun-Zhou/imgui.git
 	branch = docking
+[submodule "external/spdlog"]
+	path = external/spdlog
+	url = git@github.com:gabime/spdlog.git
