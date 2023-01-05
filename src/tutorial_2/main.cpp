@@ -1,9 +1,4 @@
-#include <iostream>
-#include <stdlib.h>
-
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
-#include <glm/glm.hpp>
+#include "pch.hpp"
 
 #include "loadShader.hpp"
 

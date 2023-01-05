@@ -1,14 +1,4 @@
-#include <imgui.h>
-#include <imgui_impl_glfw.h>
-#include <imgui_impl_opengl3.h>
-
-#include <iostream>
-
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
-
-#include <spdlog/spdlog.h>
-#include <spdlog/sinks/stdout_color_sinks.h>
+#include "pch.hpp"
 
 auto consoleLogger = spdlog::stdout_color_mt("console");
 

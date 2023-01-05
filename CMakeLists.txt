@@ -61,9 +61,15 @@ list(APPEND INCLUDES ${IMGUI_SRC_DIR})
 list(APPEND LIBS imgui)
 
 # Common library
-add_library(common src/common/loadShader.cpp src/common/loadShader.hpp)
+add_library(
+    common
+    src/common/loadShader.cpp
+    src/common/loadShader.hpp
+    src/common/pch.hpp
+)
 target_include_directories(common PUBLIC ${INCLUDES})
 target_link_libraries(common ${LIBS})
+target_precompile_headers(common PUBLIC src/common/pch.hpp)
 list(APPEND INCLUDES src/common)
 list(APPEND LIBS common)
 
