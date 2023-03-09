@@ -49,7 +49,7 @@ list(APPEND IMGUI_SRC ${IMGUI_SRC_DIR}/backends/imgui_impl_opengl3.cpp)
 list(APPEND IMGUI_INCLUDES ${IMGUI_SRC_DIR})
 list(APPEND IMGUI_INCLUDES ${IMGUI_SRC_DIR}/backends)
 
-add_library(imgui STATIC ${IMGUI_SRC})
+add_library(imgui ${IMGUI_SRC})
 target_include_directories(
     imgui
     PUBLIC ${IMGUI_INCLUDES}
