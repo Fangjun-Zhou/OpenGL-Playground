@@ -51,6 +51,11 @@
     "ctime": "cpp",
     "ratio": "cpp",
     "iomanip": "cpp",
-    "sstream": "cpp"
+    "sstream": "cpp",
+    "list": "cpp",
+    "unordered_set": "cpp",
+    "fstream": "cpp",
+    "mutex": "cpp",
+    "valarray": "cpp"
   }
 }

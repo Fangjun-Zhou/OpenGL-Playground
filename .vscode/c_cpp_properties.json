@@ -11,6 +11,16 @@
       "compileCommands": "${workspaceFolder}/build/compile_commands.json"
     },
     {
+      "name": "Linux",
+      "includePath": ["${workspaceFolder}/**"],
+      "defines": [],
+      "intelliSenseMode": "linux-gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "c17",
+      "cppStandard": "c++20",
+      "compileCommands": "${workspaceFolder}/build/compile_commands.json"
+    },
+    {
       "name": "Win32",
       "includePath": ["${workspaceFolder}/**"],
       "defines": ["_DEBUG", "UNICODE", "_UNICODE"],
