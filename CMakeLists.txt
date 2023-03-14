@@ -4,6 +4,8 @@ cmake_minimum_required(VERSION 3.25.1)
 set(CMAKE_CXX_STANDARD 17)
 # Generate compile commands.
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+# Build Debug version.
+set(CMAKE_BUILD_TYPE Debug)
 
 project(GLFWOpenGL)
 
@@ -97,3 +99,8 @@ target_link_libraries(tutorial_2 ${LIBS})
 add_executable(tutorial_3 src/tutorial_3/main.cpp src/common/loadShader.cpp)
 target_include_directories(tutorial_3 PUBLIC ${INCLUDES})
 target_link_libraries(tutorial_3 ${LIBS})
+
+# Tutorial 4
+add_executable(tutorial_4 src/tutorial_4/main.cpp src/tutorial_4/gen_cube.cpp src/common/loadShader.cpp)
+target_include_directories(tutorial_4 PUBLIC ${INCLUDES})
+target_link_libraries(tutorial_4 ${LIBS})
