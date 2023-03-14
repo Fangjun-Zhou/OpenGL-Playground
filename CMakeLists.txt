@@ -92,3 +92,8 @@ target_link_libraries(tutorial_1 ${LIBS})
 add_executable(tutorial_2 src/tutorial_2/main.cpp src/common/loadShader.cpp)
 target_include_directories(tutorial_2 PUBLIC ${INCLUDES})
 target_link_libraries(tutorial_2 ${LIBS})
+
+# Tutorial 3
+add_executable(tutorial_3 src/tutorial_3/main.cpp src/common/loadShader.cpp)
+target_include_directories(tutorial_3 PUBLIC ${INCLUDES})
+target_link_libraries(tutorial_3 ${LIBS})
