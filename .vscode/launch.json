@@ -5,10 +5,35 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Linux Cpp GDB Launch",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/tutorial_4",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Set Disassembly Flavor to Intel",
+          "text": "-gdb-set disassembly-flavor intel",
+          "ignoreFailures": true
+        }
+      ]
+    },
+    {
       "name": "Cpp GDB Launch",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/build/tutorial-1.exe",
+      "program": "${workspaceFolder}/build/tutorial_4.exe",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${fileDirname}",
