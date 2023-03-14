@@ -62,8 +62,10 @@ int main(int argc, char const *argv[]) {
   glBindVertexArray(vertexArray);
 
   // Construct a cube mesh.
-  std::unique_ptr<std::vector<Vertex>> vertexBuffer;
-  std::unique_ptr<std::vector<unsigned int>> vertexIndices;
+  std::unique_ptr<std::vector<Vertex>> vertexBuffer =
+      std::make_unique<std::vector<Vertex>>();
+  std::unique_ptr<std::vector<unsigned int>> vertexIndices =
+      std::make_unique<std::vector<unsigned int>>();
 
   generateCubeBuffer(vertexBuffer);
   generateCubeIndices(vertexIndices);
@@ -109,6 +111,8 @@ int main(int argc, char const *argv[]) {
 
     // Clear the screen.
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glEnable(GL_DEPTH_TEST);
+    glDepthFunc(GL_LESS);
 
     // Use shader.
     glUseProgram(programId);
@@ -129,7 +133,7 @@ int main(int argc, char const *argv[]) {
     GLuint matMVPId = glGetUniformLocation(programId, "u_mvp");
     glUniformMatrix4fv(matMVPId, 1, GL_FALSE, &matMVP[0][0]);
 
-    glDrawArrays(GL_TRIANGLES, 0, 3);
+    glDrawElements(GL_TRIANGLES, vertexIndices->size(), GL_UNSIGNED_INT, 0);
 
     glDisableVertexAttribArray(0);
     glDisableVertexAttribArray(1);
