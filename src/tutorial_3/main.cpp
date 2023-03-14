@@ -2,6 +2,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 
 #include "loadShader.hpp"
+#include "vertex.h"
 
 // The width and height of current glfw window.
 int windowWidth, windowHeight;
@@ -10,11 +11,6 @@ void windowResizeCallback(GLFWwindow *window, int width, int height) {
   windowWidth = width;
   windowHeight = height;
 }
-
-struct Vertex {
-  glm::vec3 position;
-  glm::vec4 color;
-};
 
 int main(int argc, char const *argv[]) {
   std::cout << "GLFW OpenGL" << std::endl;
